@@ -63,13 +63,11 @@ var width = 150,
     height = 150,
     radius = Math.min(width, height) / 2;
 
-var color = d3.scaleOrdinal().range(["#00CDFF", "#230059"]);
+var color = d3.scaleOrdinal().range(["#2BC8F2", "#1D2731"]);
 
 var arc = d3.arc().outerRadius(radius - 10)
                   .innerRadius(0);
 
-var pies = [];
-var svgs = [];
 var resNames = [];
 
 // Create date range slider
@@ -98,20 +96,20 @@ for (var key in data[0]) {
     $("#pieChart").append(d);
     
     // Add pie chart to pies array
-    pies.push(d3.pie()
-            .value(function(d) { return d.percent }).sort(null)(data[0][key]));
+    var pie = d3.pie()
+            .value(function(d) { return d.percent }).sort(null)(data[0][key]);
     
     // Add pie chart to div
-    svgs.push(d3.select("#chart" + chartNum)
+    var svg = d3.select("#chart" + chartNum)
             .append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
             .attr("transform", 
                   "translate(" + width / 2 + 
-                  "," + height / 2 + ")"));
+                  "," + height / 2 + ")");
     
-    var g = svgs[chartNum].selectAll("arc").data(pies[chartNum]).enter().append("g").attr("class", "arc");
+    var g = svg.selectAll("arc").data(pie).enter().append("g").attr("class", "arc");
 
     g.append("path").attr("d", arc)
                 .style("fill", function(d) { return color(d.data.name);})
@@ -125,7 +123,7 @@ for (var key in data[0]) {
 
 function updateData(index) {
     $("#date").text(data[index]["date"]);
-    for (var j = 0; j < pies.length; j++) {
+    for (var j = 0; j < resNames.length; j++) {
         var resData = data[index][resNames[j]];
         var pie = d3.pie().value(function(d) { return d.percent;}).sort(null)(resData);
         

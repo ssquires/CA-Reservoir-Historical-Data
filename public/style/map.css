@@ -1,12 +1,12 @@
 body {
-    background: #230059;
+    background: #1D2731;
     padding: 0;
     margin: 0;
 }
 
 h1 {
     text-align: center;
-    color: #00CDFF;
+    color: #2BC8F2;
     margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -15,7 +15,7 @@ h1 {
 
 h2 {
    text-align: center;
-    color: #FF4BB8;
+    color: #F24EA5;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     margin-top: 0;
@@ -24,7 +24,7 @@ h2 {
 
 h3 {
     text-align: center;
-    color: #FFF;
+    color: #EEE;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     margin: 0;
@@ -50,17 +50,18 @@ h3 {
 .res-name {
     margin: 0px;
     padding: 0px;
-    color: #FFF;
+    color: #EEE;
 }
 
 #date {
-    color: #FF4BB8;
+    color: #F24EA5;
     margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 #sliderContainer {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
 }
 
@@ -69,7 +70,7 @@ h3 {
     width: 100%;
     height: 10px;
     border-radius: 5px;   
-    background: #eeeeee;
+    background: #EEE;
     outline: none;
     opacity: 1;
     -webkit-transition: .2s;
@@ -82,7 +83,7 @@ h3 {
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: #FF4BB8;
+    background: #F24EA5;
     cursor: pointer;
 }
 
@@ -90,6 +91,6 @@ h3 {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #FF4BB8;
+    background: #F24EA5;
     cursor: pointer;
 }
